@@ -1,0 +1,26 @@
+{
+  "name": "byob",
+  "version": "1.0.0",
+  "description": "### Mod 4 - Solo Project",
+  "main": "beers.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hfaerber/byob.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hfaerber/byob/issues"
+  },
+  "homepage": "https://github.com/hfaerber/byob#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "knex": "^0.20.8",
+    "pg": "^7.17.1"
+  }
+}
