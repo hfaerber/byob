@@ -1,4 +1,4 @@
-[
+let breweriesData = [
   {
     "id": 1,
     "name": "(512) Brewing Company",
@@ -21209,4 +21209,6 @@
     "descript": "La Brasserie du Bouffay est situ",
     "last_mod": "2011-10-04 00:24:33"
   }
-]
+];
+
+module.exports = breweriesData;

@@ -1,4 +1,4 @@
-[
+let beersData = [
    {
       "id": 1,
       "brewery_id": 812,
@@ -39250,4 +39250,6 @@
       "ibu": "0",
       "srm": "0"
    }
-]
+];
+
+module.exports = beersData;
