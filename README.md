@@ -141,3 +141,12 @@ All endpoints are prefixed with `/api/v1`.
     "brewery_id": 648,
     "abv": "0"
   }
+
+##### POST a brewery
+  - Path: '/api/v1/breweries'
+  - Sample Response:
+  {
+      "id": [
+          1296
+      ]
+  }
