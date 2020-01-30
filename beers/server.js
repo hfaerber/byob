@@ -54,6 +54,21 @@ app.get('/api/v1/breweries/:id/beers', async (request, response) => {
   }
 });
 
+app.get('/api/v1/beers/:id', async (request, response) => {
+  try {
+    const beers = await database('beers').where('id', request.params.id).select();
+      if (beers.length) {
+        response.status(200).json(beers[0])
+      } else {
+        response.status(404).json({
+          error: `Could not find beer with an id of ${request.params.id}`
+        })
+      }
+  } catch (error) {
+    response.status(500).json({ error });
+  }
+});
+
 app.listen(app.get('port'), () => {
   console.log(`${app.locals.title} is running on http://localhost:${app.get('port')}.`);
 });
