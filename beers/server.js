@@ -31,7 +31,22 @@ app.get('/api/v1/breweries/:id', async (request, response) => {
         // i'm using [0] because i just want the single object to be the response
       } else {
         response.status(404).json({
-          error: `Could not find breweries with an id of ${request.params.id}`
+          error: `Could not find brewery with an id of ${request.params.id}`
+        })
+      }
+  } catch (error) {
+    response.status(500).json({ error });
+  }
+});
+
+app.get('/api/v1/breweries/:id/beers', async (request, response) => {
+  try {
+    const beers = await database('beers').where('brewery_id', request.params.id).select();
+      if (beers.length) {
+        response.status(200).json({beers});
+      } else {
+        response.status(404).json({
+          error: `Could not find beers for brewery id ${request.params.id}`
         })
       }
   } catch (error) {
