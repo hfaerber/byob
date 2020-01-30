@@ -1,10 +1,41 @@
-## BYOB - Build Your Own Beer Database?
+# BYOB - Build Your Own Beer Database?
 
-### Mod 4 - Solo Project
+## Mod 4 - Solo Project
 
 Using node.js with express to build a RESTful api backend server with various endpoints.
 
-#### Endpoints  
+## Endpoints  
+All endpoints are prefixed with `/api/v1`.
+
+
+| Purpose | URL | Verb | Request Body | Sample Success Response |
+|----|----|----|----|----|
+| Get all breweries |`/breweries`| GET | N/A | `{breweries: [{}, {}, ...]}` |
+| Get specific brewery |`/breweries/:id`| GET | N/A |
+  `{
+    "id": 649,
+    "name": "Aksarben Brewing (BOP)",
+    "city": "Omaha",
+    "state": "Nebraska",
+    "country": "United States",
+    "phone": "",
+    "website": "",
+    "created_at": "2020-01-30T00:22:47.859Z",
+    "updated_at": "2020-01-30T00:22:47.859Z"
+}` |  
+| Get all beers for specific brewery |`/breweries/:id/beers`| GET | N/A | `{beers: [{}, {}, ...]}` |
+| Get specific beer |`/beers/:id`| GET | N/A |  
+  `{
+    "id": 649,
+    "name": "Aksarben Brewing (BOP)",
+    "city": "Omaha",
+    "state": "Nebraska",
+    "country": "United States",
+    "phone": "",
+    "website": "",
+    "created_at": "2020-01-30T00:22:47.859Z",
+    "updated_at": "2020-01-30T00:22:47.859Z"
+}` |  
 
 ##### GET all breweries
 - Path: '/api/v1/breweries'
@@ -40,7 +71,7 @@ Using node.js with express to build a RESTful api backend server with various en
 }
 
 
-##### GET specific breweries
+##### GET specific brewery
 - Path: '/api/v1/breweries/:id'
 - Sample Response:
 {
@@ -58,7 +89,7 @@ Using node.js with express to build a RESTful api backend server with various en
 
 
 ##### GET all beers for specific brewery
-- Path: '/api/v1/breweries/649/beers'
+- Path: '/api/v1/breweries/id/beers'
 - Sample Response:
 {
     "beers": [
@@ -100,3 +131,13 @@ Using node.js with express to build a RESTful api backend server with various en
         }
     ]
 }
+
+##### GET specific beer
+- Path: '/api/v1/beers/:id'
+- Sample Response:
+  {
+    "id": 15,
+    "name": "Abita Light Beer",
+    "brewery_id": 648,
+    "abv": "0"
+  }
