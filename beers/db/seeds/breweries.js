@@ -8,7 +8,6 @@ const createBrewery = async (knex, brewery) => {
     country: brewery.country,
     phone: brewery.phone,
     website: brewery.website,
-    beers: brewery.beers
   }, 'id');
 
   let beersPromises = brewery.beers.map(beer => {
