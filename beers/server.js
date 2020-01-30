@@ -17,7 +17,13 @@ app.locals.title = 'Breweries';
 app.get('/api/v1/breweries', async (request, response) => {
   try {
     const breweries = await database('breweries').select();
-    response.status(200).json({breweries});
+      if (breweries.length) {
+        response.status(200).json({breweries});
+      } else {
+        response.status(404).json({
+            error: `Could not find resources at this path`
+        })
+      }
   } catch (error) {
     response.status(500).json({ error });
   }
@@ -28,7 +34,6 @@ app.get('/api/v1/breweries/:id', async (request, response) => {
     const breweries = await database('breweries').where('id', request.params.id).select();
       if (breweries.length) {
         response.status(200).json(breweries[0]);
-        // i'm using [0] because i just want the single object to be the response
       } else {
         response.status(404).json({
           error: `Could not find brewery with an id of ${request.params.id}`
