@@ -14,6 +14,7 @@ const app = express();
 app.set('port', process.env.PORT || 3000);
 app.locals.title = 'Breweries';
 
+// GET ENDPOINTS
 app.get('/api/v1/breweries', async (request, response) => {
   try {
     const breweries = await database('breweries').select();
@@ -73,6 +74,27 @@ app.get('/api/v1/beers/:id', async (request, response) => {
     response.status(500).json({ error });
   }
 });
+
+// POST ENDPOINTS
+app.post('/api/v1/breweries', async (request, response) => {
+  const brewery = request.body;
+
+  for (let requiredParameter of ['name', 'city', 'state', 'country', 'phone', 'website']) {
+    if (!brewery[requiredParameter]) {
+      return response
+        .status(422)
+        .send({ error: `Expected format: {name: <String>, city: <String>, state: <String>, country: <String>, phone: <String>, website: <String>}. You're missing a "${requiredParameter}" property.`});
+    }
+  }
+
+  try {
+    const id = await database('breweries').insert(brewery, 'id');
+    response.status(201).json({ id })
+  } catch (error) {
+    response.status(500).json({ error });
+  }
+});
+
 
 app.listen(app.get('port'), () => {
   console.log(`${app.locals.title} is running on http://localhost:${app.get('port')}.`);
