@@ -6,7 +6,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-// app.use(express.json());
+app.use(express.json());
 // app.use(cors());
 // // with no params/args given to cors, anyone can access from any domain
 // app.use(express.static('public'));
@@ -94,7 +94,6 @@ app.post('/api/v1/breweries', async (request, response) => {
     response.status(500).json({ error });
   }
 });
-
 
 app.listen(app.get('port'), () => {
   console.log(`${app.locals.title} is running on http://localhost:${app.get('port')}.`);
