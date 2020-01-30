@@ -95,6 +95,26 @@ app.post('/api/v1/breweries', async (request, response) => {
   }
 });
 
+app.post('/api/v1/breweries/:id/beers', async (request, response) => {
+  const brewery_id = request.params.id;
+  const beer = {...request.body, brewery_id: Number(brewery_id)};
+
+  for (let requiredParameter of ['name', 'abv']) {
+    if (!beer[requiredParameter]) {
+      return response
+        .status(422)
+        .send({error: `Expected format: {name: <String>, brewery_id: <Number>, abv: <Number>}. You're missing a "${requiredParameter}" property.`})
+    }
+  }
+
+  try {
+    const id = await database('beers').insert(beer, 'id');
+    response.status(201).json({ id })
+  } catch (error) {
+    response.status(500).json({ error });
+  }
+});
+
 app.listen(app.get('port'), () => {
   console.log(`${app.locals.title} is running on http://localhost:${app.get('port')}.`);
 });
