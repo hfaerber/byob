@@ -79,7 +79,7 @@ app.get('/api/v1/beers/:id', async (request, response) => {
 app.post('/api/v1/breweries', async (request, response) => {
   const brewery = request.body;
 
-  for (let requiredParameter of ['name', 'city', 'state', 'country', 'phone', 'website']) {
+  for (let requiredParameter of ['name', 'city', 'state']) {
     if (!brewery[requiredParameter]) {
       return response
         .status(422)
@@ -99,7 +99,7 @@ app.post('/api/v1/breweries/:id/beers', async (request, response) => {
   const brewery_id = request.params.id;
   const beer = {...request.body, brewery_id: Number(brewery_id)};
 
-  for (let requiredParameter of ['name', 'abv']) {
+  for (let requiredParameter of ['name']) {
     if (!beer[requiredParameter]) {
       return response
         .status(422)
