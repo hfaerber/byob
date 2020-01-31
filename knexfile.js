@@ -20,6 +20,9 @@ module.exports = {
     migrations: {
       directory: './beers/db/migrations'
     },
+    seeds: {
+      directory: './beers/db/seeds'
+    },
     useNullAsDefault: true
   }
 };
