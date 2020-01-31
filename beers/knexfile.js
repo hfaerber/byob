@@ -6,10 +6,10 @@ module.exports = {
     client: 'pg',
     connection: 'postgres://localhost/beers',
     migrations: {
-      directory: './beers/db/migrations'
+      directory: './db/migrations'
     },
     seeds: {
-      directory: './beers/db/seeds'
+      directory: './db/seeds'
     },
     useNullAsDefault: true
   },
@@ -18,7 +18,7 @@ module.exports = {
     client: 'pg',
     connection: process.env.DATABASE_URL + `?ssl=true`,
     migrations: {
-      directory: './beers/db/migrations'
+      directory: './db/migrations'
     },
     useNullAsDefault: true
   }
