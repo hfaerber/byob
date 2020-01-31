@@ -115,6 +115,16 @@ app.post('/api/v1/breweries/:id/beers', async (request, response) => {
   }
 });
 
+app.delete('/api/v1/beers/:id', async (request, response) => {
+  const beer_id = Number(request.params.id)
+  try {
+    const id = await database('beers').where('id', beer_id).del();
+    response.status(200).send(`Beer id ${beer_id} has been removed successfully`);
+  } catch (error) {
+    response.status(500).json({ error });
+  }
+});
+
 app.listen(app.get('port'), () => {
   console.log(`${app.locals.title} is running on http://localhost:${app.get('port')}.`);
 });
