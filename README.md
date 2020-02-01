@@ -17,11 +17,11 @@ All endpoints are prefixed with `/api/v1`.
 | Get specific beer |`/beers/:id`| GET | N/A | `{}`  [See example](#one_beer) |
 | Post brewery |`/breweries`| POST | `{name: <String>, city: <String>, state: <String>, *country: <String>, *phone: <String>, *website: <String>}` | `{}` [See example](#post_brewery) |
 | Post beer |`/breweries/:id/beers`| POST | `{name: <String>, brewery_id: <Number>, *abv: <Number>}` | `{}` [See example](#post_beer) |
-| Delete beer |`/beers/:id'| DELETE | N/A | `Beer id <id> has been removed successfully` |
+| Delete beer |`/beers/:id'| DELETE | N/A | `Beer id <id> has been removed successfully` [See example](#delete_brewery) |
 
 
 ##### <a name="all_breweries"></a> GET all breweries
-- Path: '/api/v1/breweries'
+- Path: `/api/v1/breweries`
 - Sample Response:  
 `{
   "breweries":
@@ -51,7 +51,7 @@ All endpoints are prefixed with `/api/v1`.
 }`
 
 ##### <a name="one_brewery"></a> GET specific brewery
-- Path: '/api/v1/breweries/:id'
+- Path: `/api/v1/breweries/:id`
 - Sample Response:
 `{
     "id": 649,
@@ -66,7 +66,7 @@ All endpoints are prefixed with `/api/v1`.
 }`
 
 ##### <a name="all_beers_by_brewery"></a> GET all beers for specific brewery
-- Path: '/api/v1/breweries/id/beers'
+- Path: `/api/v1/breweries/id/beers`
 - Sample Response:
 `{
     "beers": [
@@ -110,7 +110,7 @@ All endpoints are prefixed with `/api/v1`.
 }`
 
 ##### <a name="one-beer"></a> GET specific beer
-- Path: '/api/v1/beers/:id'
+- Path: `/api/v1/beers/:id`
 - Sample Response:
   `{
     "id": 15,
@@ -120,8 +120,8 @@ All endpoints are prefixed with `/api/v1`.
   }`
 
 ##### <a name="post_brewery"></a> POST a brewery
-  - Path: '/api/v1/breweries'
-  - * indicates an optional key in the required request body
+  - Path: `/api/v1/breweries`
+  - `<*>` indicates an optional key in the required request body
   - Sample Request Body:
   `{
     name: "Jarvis Blargis Brewing",
@@ -139,23 +139,22 @@ All endpoints are prefixed with `/api/v1`.
   }`
 
 ##### <a name="post_beer"></a> POST a beer  
-
-    - Path: '/api/v1/breweries/:id/beers'
+    - Path: `/api/v1/breweries/:id/beers`
     - `<*>` indicates an optional key in the required request body
-    - Sample Request Body:
+    - Sample Request Body:  
     `{
       name: "Jarvis Blargis Brewing",
       *abv: 5.4
     }`
-    - Sample Response:
-  `{
-    "id": [
-        2900
-    ]
-  }`
+    - Sample Response:  
+    `{
+      "id": [
+      2900
+      ]
+    }`
 
 ##### <a name="delete_beer"></a> DELETE a beer
-
-    - Path: '/api/v1/beers/:id'
+    - Path: `/api/v1/beers/:id`
     - Sample Request Body: N/A
-    - Sample Response: `Beer id <id> has been removed successfully`
+    - Sample Response:  
+      `Beer id <id> has been removed successfully`
