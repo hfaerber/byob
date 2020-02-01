@@ -118,8 +118,15 @@ app.post('/api/v1/breweries/:id/beers', async (request, response) => {
 app.delete('/api/v1/beers/:id', async (request, response) => {
   const beer_id = Number(request.params.id)
   try {
-    const id = await database('beers').where('id', beer_id).del();
-    response.status(200).send(`Beer id ${beer_id} has been removed successfully`);
+    const found = await database('beers').where('id', beer_id).select();
+    if (found.length) {
+      const id = await database('beers').where('id', beer_id).del();
+      response.status(200).send(`Beer id ${beer_id} has been removed successfully`);
+    } else {
+      response.status(404).json({
+        error: `Could not find beer with an id of ${request.params.id}`
+      })
+    }
   } catch (error) {
     response.status(500).json({ error });
   }
