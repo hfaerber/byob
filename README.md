@@ -17,7 +17,7 @@ All endpoints are prefixed with `/api/v1`.
 | Get specific beer |`/beers/:id`| GET | N/A | [See example](#one_beer) |
 | Post brewery |`/breweries`| POST | `{name: <String>, city: <String>, state: <String>, *country: <String>, *phone: <String>, *website: <String>}` | [See example](#post_brewery) |
 | Post beer |`/breweries/:id/beers`| POST | `{name: <String>, brewery_id: <Number>, *abv: <Number>}` | [See example](#post_beer) |
-| Delete beer |`/beers/:id'| DELETE | N/A | For successful deletion: No response body (only 204 status code) |
+| Delete beer |`/beers/:id'| DELETE | N/A | `Beer id <id> has been removed successfully` |
 
 
 ##### <a name="all_breweries"></a> GET all breweries
@@ -155,3 +155,8 @@ All endpoints are prefixed with `/api/v1`.
         2900
     ]
   }`
+
+##### <a name="delete_beer"></a> DELETE a beer
+    - Path: '/api/v1/beers/:id'
+    - Sample Request Body: N/A
+    - Sample Response: `Beer id <id> has been removed successfully`
