@@ -23,33 +23,32 @@ All endpoints are prefixed with `/api/v1`.
 ##### <a name="all_breweries"></a> GET all breweries
 - Path: '/api/v1/breweries'
 - Sample Response:  
-`{  
-  "breweries":  
-  [ {  
-        "id": 647,  
-        "name": "Aberdeen Brewing",  
-        "city": "Valparaiso",  
-        "state": "Indiana",  
-        "country": "United States",  
-        "phone": "(219) 548-3300",  
-        "website": "",  
-        "created_at": "2020-01-30T00:22:47.839Z",  
-        "updated_at": "2020-01-30T00:22:47.839Z"  
-    },
-
-    {  
-        "id": 662,  
-        "name": "Angelic Brewing",  
-        "city": "Madison",  
-        "state": "Wisconsin",  
-        "country": "United States",  
-        "phone": "1-608-257-2707",  
-        "website": "",  
-        "created_at": "2020-01-30T00:22:47.867Z",  
-        "updated_at": "2020-01-30T00:22:47.867Z"  
+`{
+  "breweries":
+  [ {
+        "id": 647,
+        "name": "Aberdeen Brewing",
+        "city": "Valparaiso",
+        "state": "Indiana",
+        "country": "United States",
+        "phone": "(219) 548-3300",
+        "website": "",
+        "created_at": "2020-01-30T00:22:47.839Z",
+        "updated_at": "2020-01-30T00:22:47.839Z"
     },  
-    ...... ]  
-}`  
+    {
+        "id": 662,
+        "name": "Angelic Brewing",
+        "city": "Madison",
+        "state": "Wisconsin",
+        "country": "United States",
+        "phone": "1-608-257-2707",
+        "website": "",
+        "created_at": "2020-01-30T00:22:47.867Z",
+        "updated_at": "2020-01-30T00:22:47.867Z"
+    },  
+    ...... ]
+}`
 
 ##### <a name="one_brewery"></a> GET specific brewery
 - Path: '/api/v1/breweries/:id'
