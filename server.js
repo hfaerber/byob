@@ -89,7 +89,7 @@ app.post('/api/v1/breweries', async (request, response) => {
 
   try {
     const id = await database('breweries').insert(brewery, 'id');
-    response.status(201).json({ id })
+    response.status(201).json({ id: id[0] })
   } catch (error) {
     response.status(500).json({ error });
   }
@@ -109,7 +109,7 @@ app.post('/api/v1/breweries/:id/beers', async (request, response) => {
 
   try {
     const id = await database('beers').insert(beer, 'id');
-    response.status(201).json({ id })
+    response.status(201).json({ id: id[0] })
   } catch (error) {
     response.status(500).json({ error });
   }

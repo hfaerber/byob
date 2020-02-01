@@ -133,9 +133,7 @@ All endpoints are prefixed with `/api/v1`.
 }`
   - Sample Response:  
 `{
-    "id": [
-        1296
-    ]
+  "id": 1296
 }`
 
 ##### <a name="post_beer"></a> POST a beer
@@ -148,9 +146,7 @@ All endpoints are prefixed with `/api/v1`.
 }`
   - Sample Response:  
 `{
-  "id": [
-  2900
-  ]
+  "id": 2900
 }`
 
 ##### <a name="delete_beer"></a> DELETE a beer
