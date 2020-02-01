@@ -13,11 +13,11 @@ All endpoints are prefixed with `/api/v1`.
 |----|----|----|----|----|
 | Get all breweries |`/breweries`| GET | N/A | `{breweries: [{}, {}, ...]}`   [See example](#all_breweries) |
 | Get specific brewery |`/breweries/:id`| GET | N/A | `{}` [See example](#one_brewery) |
-| Get all beers for specific brewery |`/breweries/:id/beers`| GET | N/A | `{beers: [{}, {}, ...]}`  [See example](#all_beers_by_brewery) |
+| Get all beers for specific brewery |`/breweries/:id/beers`| GET | N/A | `{beers: [{}, {}, ...]}`    [See example](#all_beers_by_brewery) |
 | Get specific beer |`/beers/:id`| GET | N/A | `{}`  [See example](#one_beer) |
 | Post brewery |`/breweries`| POST | `{name: <String>, city: <String>, state: <String>, *country: <String>, *phone: <String>, *website: <String>}` | `{}` [See example](#post_brewery) |
 | Post beer |`/breweries/:id/beers`| POST | `{name: <String>, brewery_id: <Number>, *abv: <Number>}` | `{}` [See example](#post_beer) |
-| Delete beer |`/beers/:id'| DELETE | N/A | `Beer id <id> has been removed successfully`  [See example](#delete_brewery) |
+| Delete beer |`/beers/:id'| DELETE | N/A | `Beer id <id> has been removed successfully`    [See example](#delete_brewery) |
 
 
 ##### <a name="all_breweries"></a> GET all breweries
