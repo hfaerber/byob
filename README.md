@@ -35,7 +35,8 @@ All endpoints are prefixed with `/api/v1`.
         "website": "",  
         "created_at": "2020-01-30T00:22:47.839Z",  
         "updated_at": "2020-01-30T00:22:47.839Z"  
-    },  
+    },
+
     {  
         "id": 662,  
         "name": "Angelic Brewing",  
