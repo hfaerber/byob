@@ -7,6 +7,8 @@ For this project, I used node.js with the Express framework to build a RESTful a
 
 This project was full of wins as I worked through the backend processes of building a database and api server for the first time.  The biggest challenge was adjusting my debugging processes to be able to test my work and correct errors without a browser environment.
 
+This project used GitHub Projects for project management: [Go To Project Management Board](https://github.com/hfaerber/byob/projects/1)
+
 ## Setup
 - Clone this repo and run npm install
 - Run the server by using npm start
