@@ -15,6 +15,8 @@ This project used GitHub Projects for project management: [Go To Project Managem
 
 The server will run on `http://localhost:3000`.
 
+**Heroku Deployment:** `https://byo-beer-database.herokuapp.com/`
+
 ## Endpoints  
 All endpoints are prefixed with `/api/v1`.
 `<*>` indicates an optional key in the required request body
