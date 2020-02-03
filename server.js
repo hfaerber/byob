@@ -7,9 +7,8 @@ const cors = require('cors');
 const app = express();
 
 app.use(express.json());
-// app.use(cors());
-// // with no params/args given to cors, anyone can access from any domain
-// app.use(express.static('public'));
+app.use(cors());
+app.use(express.static('public'));
 
 app.set('port', process.env.PORT || 3000);
 app.locals.title = 'Breweries';
@@ -115,6 +114,7 @@ app.post('/api/v1/breweries/:id/beers', async (request, response) => {
   }
 });
 
+// DELETE ENDPOINTS
 app.delete('/api/v1/beers/:id', async (request, response) => {
   const beer_id = Number(request.params.id)
   try {

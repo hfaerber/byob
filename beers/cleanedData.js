@@ -13,8 +13,6 @@ let cleanedData = breweriesData.reduce((acc, brewery) => {
     return acc;
   }, []);
 
-  // console.log("myBeers", myBeers);
-
    let updatedBrewery = {
       name: brewery.name,
       city: brewery.city,
@@ -30,8 +28,5 @@ let cleanedData = breweriesData.reduce((acc, brewery) => {
     }
   return acc;
 }, [])
-
-
-// console.log("CLEAN BREWERY", cleanedData[440]);
 
 module.exports = cleanedData;

@@ -1,5 +1,4 @@
 const cleanedData = require('../../cleanedData');
-  // test
 const createBrewery = async (knex, brewery) => {
   const breweryId = await knex('breweries').insert({
     name: brewery.name,
